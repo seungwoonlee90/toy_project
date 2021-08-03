@@ -27,6 +27,7 @@ jobs:
         pip install requests bs4 Slacker
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Run main.py
+      working-directory: ../식단_자동화
       run: |
         python main.py
       env:

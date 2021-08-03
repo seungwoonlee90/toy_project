@@ -1,3 +1,4 @@
+import os
 import requests
 from bs4 import BeautifulSoup
 from slacker import Slacker
@@ -12,6 +13,6 @@ for i in menus :
     menu = i.text
     print(menu)
 
-token = "PRESONAL_TOKEN"
+token = os.environ.get("SECURE")
 slack = Slacker(token)
 slack.chat.post_message("#ethan-bot", menu, as_user=True)

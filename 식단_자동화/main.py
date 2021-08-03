@@ -13,6 +13,6 @@ for i in menus :
     menu = i.text
     print(menu)
 
-token = os.environ.get("SECURE")
+token = os.environ.get("SECURE") #token test
 slack = Slacker(token)
 slack.chat.post_message("#ethan-bot", menu, as_user=True)

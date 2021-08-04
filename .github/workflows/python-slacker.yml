@@ -2,7 +2,7 @@ name: python-slacker
 
 on:
     schedule:
-      - cron: '0 0 * * 1-5'
+      - cron: '30 23 * * 1-5'
     push:
       branches: [ master ]
     pull_request:

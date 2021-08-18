@@ -3,10 +3,6 @@ name: python-slacker
 on:
     schedule:
       - cron: '00 23 * * 1-5'
-    push:
-      branches: [ master ]
-    pull_request:
-      branches: [ master ]
 
 jobs:
   build:

@@ -1,7 +1,28 @@
 body {
-    background-color: blue;
-    color: white;
-    margin: 10px;
-    font-family: Arial;
-    text-align: center;
-  }
+  height: 10000px;
+  background: linear-gradient( #200122, #6f0000);
+}
+
+.h1 {
+  color: #333333;
+}
+
+.progressbar {
+  position: fixed;
+  width: 5px;
+  height: 140px;
+  top: 40%;
+  left: 20px;
+  background-color: #02343F;
+  z-index: 10;
+}
+
+.percentage {
+  position: absolute;
+  width: 5px;
+  height: 140px;
+  top: 0;
+  left: 0;
+  background-color: #F0EDCC;
+  z-index: 11;
+}

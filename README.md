@@ -9,3 +9,6 @@
 
 ## gasoline_projcet
 - 빌게이츠의 저서 '기후재앙을 피하는 법'에서 영감을 얻은, 휘발유 가격이 얼마나 저렴한지 시각화 !
+
+## water_power
+- wamis의 유량 데이터를 활용한 power(kw) 계산 !

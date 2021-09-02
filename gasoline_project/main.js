@@ -56,14 +56,17 @@ start.addEventListener('click', function(event){
     api_call(apiKey);
 })
 
+
+//CORS error
 function api_call(apiKey) {
-    let url = `http://www.opinet.co.kr/api/lowTop10.do?out=xml&code=${apiKey}&prodcd=B027&area=1703&cnt=10`
+    let url = `http://www.opinet.co.kr/api/lowTop10.do?out=json&code=${apiKey}&prodcd=B027&area=1703&cnt=10`
 
     axios.request({
         method: 'GET',
         url: url,
-        headers: {'Content-Type': 'text/plain'},
-        type: 'jsonp'
+        withCredentials: false,
+        headers: {'Access-Control-Allow-Origin' : '*'},
+        type: 'json'
     })
     .then(function(res) {
         console.log(res.data)

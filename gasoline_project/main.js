@@ -58,11 +58,10 @@ start.addEventListener('click', function(event){
 
 
 //CORS error
-function api_call(apiKey) {
-    console.log(apiKey)
+api_call = async(apiKey) => {
     let url = `http://www.opinet.co.kr/api/lowTop10.do?out=json&code=${apiKey}&prodcd=B027&area=1703&cnt=10`
-
-    axios.request({
+    console.log(url)
+    await axios.get({
         method: 'GET',
         url: url,
         mode: 'no-cors',
@@ -70,8 +69,7 @@ function api_call(apiKey) {
         headers: {'Access-Control-Allow-Origin' : '*'},
         type: 'json',
         credentials: 'same-origin'
-    })
-    .then(function(res) {
+    }).then(function(res) {
         console.log(res.data)
     })
 }

@@ -23,7 +23,6 @@ class WindowClass(QMainWindow, form_class) :
         instaPw = self.textEdit_2.toPlainText()
         tag = self.textEdit_3.toPlainText()
         count = self.spinBox.value()
-        ment = self.textEdit_4.toPlainText()
         
         baseUrl = "https://www.instagram.com/"
         url = baseUrl
@@ -52,8 +51,6 @@ class WindowClass(QMainWindow, form_class) :
         btn_svg = like_btn.find_element_by_tag_name('svg')
         svg_txt = btn_svg.get_attribute('aria-label')
         print(svg_txt)
-
-        comm = driver.find_element_by_xpath("//textarea[@class='Ypffh']")
         ac = ActionChains(driver)
 
         if svg_txt == '좋아요 취소' :
@@ -61,12 +58,6 @@ class WindowClass(QMainWindow, form_class) :
             next_content.click()
         else :
             like_btn.send_keys(Keys.ENTER)
-            ac.move_to_element(comm)
-            ac.click()
-            ac.pause(3)
-            ac.send_keys(ment)
-            ac.pause(1)
-            ac.send_keys(Keys.ENTER)
             ac.perform()
             next_content = driver.find_element_by_link_text("다음")
             next_content.click()
@@ -77,8 +68,6 @@ class WindowClass(QMainWindow, form_class) :
             btn_svg = like_btn.find_element_by_tag_name('svg')
             svg_txt = btn_svg.get_attribute('aria-label')
             print(svg_txt)
-
-            comm = driver.find_element_by_xpath("//textarea[@class='Ypffh']")
             ac = ActionChains(driver)
 
             if svg_txt == '좋아요 취소' :
@@ -87,12 +76,6 @@ class WindowClass(QMainWindow, form_class) :
 
             else :
                 like_btn.send_keys(Keys.ENTER)
-                ac.move_to_element(comm)
-                ac.click()
-                ac.pause(3)
-                ac.send_keys(ment)
-                ac.pause(1)
-                ac.send_keys(Keys.ENTER)
                 ac.perform()
                 next_content = driver.find_element_by_link_text("다음")
                 next_content.click()

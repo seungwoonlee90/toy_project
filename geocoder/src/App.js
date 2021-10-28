@@ -84,7 +84,7 @@ function App() {
           >
             <div className="download">
               <p>Download</p>
-              <span class="material-icons">file_download</span>
+              <span className="material-icons">file_download</span>
             </div>
           </CSVLink>
         ) : (

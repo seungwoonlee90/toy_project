@@ -47,7 +47,7 @@ function App() {
   const handleSelect = (e) => {
     crsEdit(e.target.value);
   };
-
+  console.log(data);
   return (
     <div className="App">
       <div className="wrapper">

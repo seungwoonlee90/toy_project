@@ -14,6 +14,7 @@ function App() {
     if (fileInfo) {
       prgoressEdit(true);
     }
+    console.log(data);
     let newArray = [];
     for (let i = 0; i < data.length; i++) {
       let address = data[i].addr;

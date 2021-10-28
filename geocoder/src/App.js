@@ -17,7 +17,7 @@ function App() {
     let newArray = [];
     for (let i = 0; i < data.length; i++) {
       let address = data[i].addr;
-      let Key = "EBB1ED94-DE92-302B-9402-D87472CEFCA1";
+      let Key = process.env.REACT_APP_API_KEY;
       let url = `http://api.vworld.kr/req/address?service=address&request=getcoord&version=2.0&crs=epsg:${crs}&address=${address}&refine=true&simple=false&format=json&type=road&key=${Key}`;
 
       await axios.get(url).then((res) => {

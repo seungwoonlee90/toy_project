@@ -14,7 +14,6 @@ function App() {
     if (fileInfo) {
       prgoressEdit(true);
     }
-    console.log(data);
     let newArray = [];
     for (let i = 0; i < data.length; i++) {
       let address = data[i].addr;
@@ -48,7 +47,7 @@ function App() {
   const handleSelect = (e) => {
     crsEdit(e.target.value);
   };
-  console.log(data);
+
   return (
     <div className="App">
       <div className="wrapper">

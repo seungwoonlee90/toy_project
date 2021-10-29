@@ -58,7 +58,11 @@ function App() {
             도로명주소를
             <select className="options" onChange={handleSelect}>
               <option value="4326"> 🌏 위경도 (EPSG:4326)</option>
+              <option value="3857"> 🌏 구글지도 (EPSG:3857)</option>
+              <option value="5180">🌏 TM서부원점 (EPSG:5180)</option>
               <option value="5181">🌏 TM중부원점 (EPSG:5181)</option>
+              <option value="5182">🌏 TM제주원점 (EPSG:5182)</option>
+              <option value="5183">🌏 TM동부원점 (EPSG:5183)</option>
               <option value="5179">🌏 UTM-K (EPSG:5179)</option>
             </select>
             좌표계로 변환해줍니다&nbsp;✨

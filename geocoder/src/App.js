@@ -9,6 +9,7 @@ function App() {
   let [down, downEdit] = useState(false);
   let [crs, crsEdit] = useState(4326);
   let [data, dataEdit] = useState([]);
+  let [addType, addTypeEdit] = useState("road");
 
   const handleForce = async (data, fileInfo) => {
     if (fileInfo) {
@@ -18,7 +19,7 @@ function App() {
     for (let i = 0; i < data.length; i++) {
       let address = data[i].addr;
       let Key = process.env.REACT_APP_API_KEY;
-      let url = `http://api.vworld.kr/req/address?service=address&request=getcoord&version=2.0&crs=epsg:${crs}&address=${address}&refine=true&simple=false&format=json&type=road&key=${Key}`;
+      let url = `http://api.vworld.kr/req/address?service=address&request=getcoord&version=2.0&crs=epsg:${crs}&address=${address}&refine=true&simple=false&format=json&type=${addType}&key=${Key}`;
 
       try {
         await axios.get(url).then((res) => {
@@ -54,14 +55,22 @@ function App() {
     crsEdit(e.target.value);
   };
 
+  const addrSelect = (e) => {
+    addTypeEdit(e.target.value);
+  };
+
   return (
     <div className="App">
       <div className="wrapper">
         <div className="header">
-          <h4>도로명주소 좌표 변환기 ver 1.0 📍</h4>
+          <h4>주소 좌표 변환기 ver 1.0 📍</h4>
           <div className="desc">
             브이월드(vworld)에서 제공하는 geocoder api를 이용하여 <br />
-            도로명주소를
+            <select className="options" onChange={addrSelect}>
+              <option value="road"> 📍 도로명주소</option>
+              <option value="PARCEL"> 📍 지번주소</option>
+            </select>
+            를
             <select className="options" onChange={handleSelect}>
               <option value="4326"> 🌏 위경도 (EPSG:4326)</option>
               <option value="3857"> 🌏 구글지도 (EPSG:3857)</option>

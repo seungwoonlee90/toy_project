@@ -20,11 +20,17 @@ function App() {
       let Key = process.env.REACT_APP_API_KEY;
       let url = `http://api.vworld.kr/req/address?service=address&request=getcoord&version=2.0&crs=epsg:${crs}&address=${address}&refine=true&simple=false&format=json&type=road&key=${Key}`;
 
-      await axios.get(url).then((res) => {
-        let xcoord = res.data.response.result.point.x;
-        let ycoord = res.data.response.result.point.y;
+      try {
+        await axios.get(url).then((res) => {
+          let xcoord = res.data.response.result.point.x;
+          let ycoord = res.data.response.result.point.y;
+          newArray.push({ address, xcoord, ycoord });
+        });
+      } catch {
+        let xcoord = "";
+        let ycoord = "";
         newArray.push({ address, xcoord, ycoord });
-      });
+      }
     }
     dataEdit(newArray);
     prgoressEdit(false);
@@ -110,6 +116,18 @@ function App() {
           </a>
         </p>
       </div>
+      <ins
+        className="kakao_ad_area"
+        style={{ display: "none" }}
+        data-ad-unit="DAN-rgk7dxo2C6UptXbe"
+        data-ad-width="160"
+        data-ad-height="600"
+      ></ins>
+      <script
+        type="text/javascript"
+        src="//t1.daumcdn.net/kas/static/ba.min.js"
+        async
+      ></script>
     </div>
   );
 }

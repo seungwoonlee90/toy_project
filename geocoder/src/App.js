@@ -10,6 +10,7 @@ function App() {
   let [crs, crsEdit] = useState(4326);
   let [data, dataEdit] = useState([]);
   let [addType, addTypeEdit] = useState("road");
+  let [percent, percentEdit] = useState(0);
 
   const handleForce = async (data, fileInfo) => {
     if (fileInfo) {
@@ -19,6 +20,7 @@ function App() {
     for (let i = 0; i < data.length; i++) {
       let address = data[i].addr;
       let Key = process.env.REACT_APP_API_KEY;
+      percentEdit(Math.ceil((i / data.length) * 100));
       let url = `http://api.vworld.kr/req/address?service=address&request=getcoord&version=2.0&crs=epsg:${crs}&address=${address}&refine=true&simple=false&format=json&type=${addType}&key=${Key}`;
 
       try {
@@ -92,7 +94,14 @@ function App() {
           parserOptions={papaparseOptions}
           inputStyle={{ width: "180px" }}
         />
-        {progress ? <span className="material-icons progress">loop</span> : ""}
+        {progress ? (
+          <div>
+            <span className="material-icons progress">loop</span>
+            <div>{percent}%</div>
+          </div>
+        ) : (
+          ""
+        )}
         {down ? (
           <CSVLink
             data={data}

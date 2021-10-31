@@ -11,7 +11,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  margin-top: 12vh;
+  margin-top: 7vh;
   margin-left: 45vh;
   height: 72vh;
   width: 55vw;
@@ -118,4 +118,10 @@ form {
   text-decoration: none;
   color: #ffe6cf;
   margin-top: 3px;
+}
+
+.Coupang {
+  display: flex;
+  justify-content: center;
+  margin-top: 18px;
 }

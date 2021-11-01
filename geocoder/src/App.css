@@ -17,6 +17,11 @@ body {
   top: 13vh;
   right: 5vw;
 }
+.adfit2 {
+  position: absolute;
+  top: 13vh;
+  left: 5vw;
+}
 
 .wrapper {
   display: flex;

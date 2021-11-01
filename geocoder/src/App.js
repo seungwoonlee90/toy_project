@@ -5,6 +5,7 @@ import axios from "axios";
 import { CSVLink } from "react-csv";
 import Coupang from "./Coupang";
 import Kakao from "./Kakao";
+import Clickmon from "./Clickmon";
 
 function App() {
   let [progress, prgoressEdit] = useState(false);
@@ -68,6 +69,7 @@ function App() {
     <>
       <div className="App">
         <Kakao />
+        <Clickmon />
         <div className="wrapper">
           <div className="header">
             <h4>주소 좌표 변환기 ver 1.0 📍</h4>

@@ -4,6 +4,7 @@ import CSVReader from "react-csv-reader";
 import axios from "axios";
 import { CSVLink } from "react-csv";
 import Coupang from "./Coupang";
+import Kakao from "./Kakao";
 
 function App() {
   let [progress, prgoressEdit] = useState(false);
@@ -66,6 +67,7 @@ function App() {
   return (
     <>
       <div className="App">
+        <Kakao />
         <div className="wrapper">
           <div className="header">
             <h4>주소 좌표 변환기 ver 1.0 📍</h4>

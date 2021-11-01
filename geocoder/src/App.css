@@ -6,6 +6,18 @@ body {
   overflow: hidden;
 }
 
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.adfit {
+  position: absolute;
+  top: 13vh;
+  right: 5vw;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;

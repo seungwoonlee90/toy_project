@@ -36,6 +36,7 @@ function App() {
         newArray.push({ address, xcoord, ycoord });
       }
     }
+    console.log(newArray);
     dataEdit(newArray);
     prgoressEdit(false);
     downEdit(true);
@@ -136,18 +137,6 @@ function App() {
             </a>
           </p>
         </div>
-        <ins
-          className="kakao_ad_area"
-          style={{ display: "none" }}
-          data-ad-unit="DAN-rgk7dxo2C6UptXbe"
-          data-ad-width="160"
-          data-ad-height="600"
-        ></ins>
-        <script
-          type="text/javascript"
-          src="//t1.daumcdn.net/kas/static/ba.min.js"
-          async
-        ></script>
       </div>
       <Coupang />
     </>

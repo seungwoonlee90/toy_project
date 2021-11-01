@@ -11,7 +11,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  margin-top: 7vh;
+  margin-top: 10vh;
   margin-left: 45vh;
   height: 72vh;
   width: 55vw;
@@ -26,8 +26,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 80px;
-  height: 200px;
+  margin-bottom: 30px;
+  height: 400px;
   width: 100%;
   position: relative;
   font-size: 23px;
@@ -46,6 +46,14 @@ p {
 .desc {
   font-size: 20px;
   text-align: center;
+}
+
+.howto {
+  display: flex;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  color: #ffe6cf;
 }
 
 .header h4 {
@@ -69,7 +77,6 @@ form {
 }
 
 .wrapper .reader {
-  width: 50px;
   text-align: center;
   align-items: center;
   position: absolute;
@@ -114,7 +121,7 @@ form {
   bottom: 2%;
 }
 
-.footer-icon {
+.google-icon {
   text-decoration: none;
   color: #ffe6cf;
   margin-top: 3px;

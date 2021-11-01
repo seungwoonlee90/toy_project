@@ -36,8 +36,8 @@ function App() {
         newArray.push({ address, xcoord, ycoord });
       }
     }
-    console.log(newArray);
     dataEdit(newArray);
+    console.log(newArray);
     prgoressEdit(false);
     downEdit(true);
   };
@@ -86,8 +86,24 @@ function App() {
                 <option value="5179">🌏 UTM-K (EPSG:5179)</option>
               </select>
               좌표계로 변환해줍니다&nbsp;✨
-              <br />
-              <p>컬럼명을 addr 로 설정후 csv 파일로 올려주세요</p>
+            </div>
+            <div className="howto">
+              <p>
+                - 사용방법 -<br />
+                1. 컬럼명을 addr 로 설정 후 CSV UTF-8 포맷으로 준비해주세요
+                <br />
+                <a
+                  href="https://chrome.google.com/webstore/detail/moesif-origin-cors-change/digfbfaphojjndkpccljibejjbppifbc"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="google-icon"
+                >
+                  2. 크롬 익스텐션(
+                  <span className="material-icons google-icon">extension</span>)
+                </a>
+                을 설치 후 ON으로 설정을 변경해주세요 <br />
+                3. 파일선택을 눌러 CSV 파일을 올려주세요 <br />
+              </p>
             </div>
           </div>
           <CSVReader
@@ -99,7 +115,7 @@ function App() {
           />
           {progress ? (
             <div>
-              <span className="material-icons progress">loop</span>
+              <span className="material-icons progress google-icon">loop</span>
               <div>{percent}%</div>
             </div>
           ) : (
@@ -130,10 +146,10 @@ function App() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span className="material-icons footer-icon">home</span>
+              <span className="material-icons google-icon">home</span>
             </a>
             <a href="mailto:superman@test.com">
-              <span className="material-icons footer-icon">email</span>
+              <span className="material-icons google-icon">email</span>
             </a>
           </p>
         </div>

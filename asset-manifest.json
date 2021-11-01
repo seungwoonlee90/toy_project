@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/toy_project/static/css/main.fbd64ebe.chunk.css",
-    "main.js": "/toy_project/static/js/main.78443a74.chunk.js",
-    "main.js.map": "/toy_project/static/js/main.78443a74.chunk.js.map",
+    "main.css": "/toy_project/static/css/main.b84011da.chunk.css",
+    "main.js": "/toy_project/static/js/main.6961d753.chunk.js",
+    "main.js.map": "/toy_project/static/js/main.6961d753.chunk.js.map",
     "runtime-main.js": "/toy_project/static/js/runtime-main.1cd80b74.js",
     "runtime-main.js.map": "/toy_project/static/js/runtime-main.1cd80b74.js.map",
     "static/js/2.08af65d3.chunk.js": "/toy_project/static/js/2.08af65d3.chunk.js",
     "static/js/2.08af65d3.chunk.js.map": "/toy_project/static/js/2.08af65d3.chunk.js.map",
     "index.html": "/toy_project/index.html",
-    "static/css/main.fbd64ebe.chunk.css.map": "/toy_project/static/css/main.fbd64ebe.chunk.css.map",
+    "static/css/main.b84011da.chunk.css.map": "/toy_project/static/css/main.b84011da.chunk.css.map",
     "static/js/2.08af65d3.chunk.js.LICENSE.txt": "/toy_project/static/js/2.08af65d3.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.1cd80b74.js",
     "static/js/2.08af65d3.chunk.js",
-    "static/css/main.fbd64ebe.chunk.css",
-    "static/js/main.78443a74.chunk.js"
+    "static/css/main.b84011da.chunk.css",
+    "static/js/main.6961d753.chunk.js"
   ]
 }

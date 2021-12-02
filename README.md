@@ -12,4 +12,5 @@
 
 ## geocoder
 - vworld의 API를 활용하여 별도의 프로그램 설치 없이 주소를 원하는 좌표계로 변환!
-- [개발관련링크](https://veil-jonquil-16f.notion.site/geocoder-8d2d151eb5614de6baf0f2418b0e4f43)
+- [Site](https://seungwoonlee90.github.io/toy_project/)
+- [개발일지](https://veil-jonquil-16f.notion.site/geocoder-8d2d151eb5614de6baf0f2418b0e4f43)

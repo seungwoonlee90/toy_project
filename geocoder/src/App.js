@@ -27,7 +27,11 @@ function App() {
       let url = `http://api.vworld.kr/req/address?service=address&request=getcoord&version=2.0&crs=epsg:${crs}&address=${address}&refine=true&simple=false&format=json&type=${addType}&key=${Key}`;
 
       try {
-        await axios.get(url).then((res) => {
+        await axios.request({
+          url: url,
+          method: "GET"
+        }).then((res) => {
+          res.header("Access-Control-Allow-Origin", "*");
           let xcoord = res.data.response.result.point.x;
           let ycoord = res.data.response.result.point.y;
           newArray.push({ address, xcoord, ycoord });

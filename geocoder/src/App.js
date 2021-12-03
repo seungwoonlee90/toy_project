@@ -156,7 +156,7 @@ function App() {
             >
               <span className="material-icons google-icon">home</span>
             </a>
-            <a href="mailto:superman@test.com">
+            <a href="mailto:seungwoonlee90@gmail.com">
               <span className="material-icons google-icon">email</span>
             </a>
           </p>

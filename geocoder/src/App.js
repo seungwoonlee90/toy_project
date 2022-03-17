@@ -114,13 +114,15 @@ function App() {
               </p>
             </div>
           </div>
+          
           <CSVReader
-            className="reader"
-            cssClass="react-csv-input"
-            onFileLoaded={handleForce}
-            parserOptions={papaparseOptions}
-            inputStyle={{ width: "180px" }}
-          />
+              className="reader"
+              cssClass="react-csv-input"
+              onFileLoaded={handleForce}
+              parserOptions={papaparseOptions}
+              inputStyle={{ width: "180px" }}
+            />
+            
           {progress ? (
             <div>
               <span className="material-icons progress google-icon">loop</span>

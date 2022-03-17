@@ -1,3 +1,9 @@
+@media all and (min-width: 480px) {
+  body {
+    background-color: blue;
+  }
+}
+
 body {
   background-color: #485861;
   font-family: sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -61,15 +67,16 @@ p {
 }
 
 .desc {
-  font-size: 20px;
+  font-size: 1.1rem;
   text-align: center;
 }
 
 .howto {
   display: flex;
-  font-size: 18px;
+  font-size: 1.1rem;
   text-align: center;
   text-decoration: none;
+  justify-content: center;
   color: #ffe6cf;
 }
 

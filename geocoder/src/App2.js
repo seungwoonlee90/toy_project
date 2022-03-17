@@ -6,6 +6,45 @@ import { CSVLink } from "react-csv";
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import { styled, Box } from '@mui/system';
+import ModalUnstyled from '@mui/base/ModalUnstyled';
+import CircularProgress from '@mui/material/CircularProgress';
+
+const StyledModal = styled(ModalUnstyled)`
+  position: fixed;
+  z-index: 1300;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const Backdrop = styled('div')`
+  z-index: -1;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-tap-highlight-color: transparent;
+`;
+
+const style = {
+  width: 400,
+  bgcolor: 'white',
+  border: '2px solid #000',
+  p: 2,
+  px: 4,
+  pb: 3,
+};
 
 function App() {
     let [progress, prgoressEdit] = useState(false);
@@ -14,6 +53,9 @@ function App() {
     let [data, dataEdit] = useState([]);
     let [addType, addTypeEdit] = useState("road");
     let [percent, percentEdit] = useState(0);
+    let [open, setOpen] = React.useState(false);
+    let handleOpen = () => setOpen(true);
+    let handleClose = () => setOpen(false);
   
     const handleForce = async (data, fileInfo) => {
       if (fileInfo) {
@@ -43,7 +85,6 @@ function App() {
         }
       }
       dataEdit(newArray);
-      console.log(newArray);
       prgoressEdit(false);
       downEdit(true);
     };
@@ -73,53 +114,80 @@ function App() {
         <div className="App">
             <Container maxWidth="sm">
                 <h1 style={{"text-align" : "center"}}>주소 좌표 변환기 ver 1.1 📍</h1>
-                <div className="desc">
-                    브이월드(vworld)에서 제공하는 geocoder api를 이용하여 <br />
-                    <select className="options" onChange={addrSelect}>
-                        <option value="road"> 📍 도로명주소</option>
-                        <option value="PARCEL"> 📍 지번주소</option>
-                    </select>
-                    를
-                    <select className="options" onChange={handleSelect}>
-                        <option value="4326"> 🌏 위경도 (EPSG:4326)</option>
-                        <option value="3857"> 🌏 구글지도 (EPSG:3857)</option>
-                        <option value="5180">🌏 TM서부원점 (EPSG:5180)</option>
-                        <option value="5181">🌏 TM중부원점 (EPSG:5181)</option>
-                        <option value="5182">🌏 TM제주원점 (EPSG:5182)</option>
-                        <option value="5183">🌏 TM동부원점 (EPSG:5183)</option>
-                        <option value="5179">🌏 UTM-K (EPSG:5179)</option>
-                    </select>
-                    좌표계로 변환해줍니다&nbsp;✨
-                </div>
-                <div className='howto'>
-                    <p>
-                        - 사용방법 -<br />
-                        1. 컬럼명을 addr 로 설정 후 CSV UTF-8 포맷으로 준비해주세요
-                        <br />
-                        <a
-                        href="https://chrome.google.com/webstore/detail/moesif-origin-cors-change/digfbfaphojjndkpccljibejjbppifbc"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="google-icon"
+                <div className="main">
+                    <div>
+                        <button type="button" onClick={handleOpen}>
+                            User Guide
+                        </button>
+                        <StyledModal
+                            aria-labelledby="unstyled-modal-title"
+                            aria-describedby="unstyled-modal-description"
+                            open={open}
+                            onClose={handleClose}
+                            BackdropComponent={Backdrop}
                         >
-                        2. 크롬 익스텐션(
-                        <span className="material-icons google-icon">extension</span>)
-                        </a>
-                        을 설치 후 ON으로 설정을 변경해주세요 <br />
-                        3. 파일선택을 눌러 CSV 파일을 올려주세요 <br />
-                    </p>
-                </div>
-                <CSVReader
-              className="reader"
-              cssClass="react-csv-input"
-              onFileLoaded={handleForce}
-              parserOptions={papaparseOptions}
-              inputStyle={{ width: "180px" }}
-            />
-            
+                            <Box sx={style}>
+                            <h2 id="unstyled-modal-title" style={{"color" : "black"}}>Geocoder User Guide 🧐</h2>
+                            <p id="unstyled-modal-description" style={{"color" : "black", "textAlign" : "left"}}>
+                            1. 컬럼명을 addr 로 설정 후 CSV UTF-8 포맷으로 준비해주세요<br />
+                            2. 
+                            <a
+                            href="https://chrome.google.com/webstore/detail/moesif-origin-cors-change/digfbfaphojjndkpccljibejjbppifbc"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="google-icon"
+                            style={{"color" : "black", "textDecoration": "underline"}}
+                            >
+                            크롬 익스텐션
+                            </a>
+                            을 설치 후 ON으로 설정을 변경해주세요 <br />
+                            3. 파일선택을 눌러 CSV 파일을 올려주세요 <br />
+                            </p>
+                            </Box>
+                        </StyledModal>
+                    </div>
+                    <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">주소</InputLabel>
+                        <Select
+                            labelId="demo-simple-select-label"
+                            id="demo-simple-select"
+                            value={addType}
+                            label="road"
+                            onChange={addrSelect}
+                        >
+                            <MenuItem value="road">📍 도로명주소</MenuItem>
+                            <MenuItem value="parcel">📍 지번주소</MenuItem>
+                        </Select>
+                    </FormControl>
+                    <FormControl fullWidth className='crs_form'>
+                        <InputLabel id="demo-simple-select-label">좌표계</InputLabel>
+                        <Select
+                            labelId="demo-simple-select-label"
+                            id="demo-simple-select"
+                            value={crs}
+                            label="crs"
+                            onChange={handleSelect}
+                        >
+                            <MenuItem value="4326">🌏 위경도 (EPSG:4326)</MenuItem>
+                            <MenuItem value="3857">🌏 구글지도 (EPSG:3857)</MenuItem>
+                            <MenuItem value="5180">🌏 TM서부원점 (EPSG:5180)</MenuItem>
+                            <MenuItem value="5181">🌏 TM중부원점 (EPSG:5181)</MenuItem>
+                            <MenuItem value="5182">🌏 TM제주원점 (EPSG:5182)</MenuItem>
+                            <MenuItem value="5183">🌏 TM동부원점 (EPSG:5183)</MenuItem>
+                            <MenuItem value="5179">🌏 UTM-K (EPSG:5179)</MenuItem>
+                        </Select>
+                    </FormControl>
+                    <CSVReader
+                        className="reader"
+                        cssClass="react-csv-input"
+                        onFileLoaded={handleForce}
+                        parserOptions={papaparseOptions}
+                    />
           {progress ? (
             <div>
-              <span className="material-icons progress google-icon">loop</span>
+              <Box sx={{ display: 'flex' }}>
+                <CircularProgress color="inherit" />
+              </Box>
               <div>{percent}%</div>
             </div>
           ) : (
@@ -141,8 +209,8 @@ function App() {
           ) : (
             ""
           )}
-                <Grid container spacing={1}>
-                    <Grid item>
+                <Grid container>
+                    <Grid item xs={8}>
                         <Link href="https://github.com/seungwoonlee90" variant="body2">
                             <span className="material-icons google-icon">home</span>
                         </Link>
@@ -153,10 +221,12 @@ function App() {
                         </Link>
                     </Grid>
                 </Grid>
-                <p className="footer">
-                    &copy; {new Date().getFullYear()}. ethanlee. all rights reserved.<br />
-                    if you have any questions, please let me know! <br />
-                </p>
+                </div>
+                <div className="footer">
+                    <h4>
+                        &copy; {new Date().getFullYear()}. ethanlee. all rights reserved.
+                    </h4>
+                </div>
             </Container>
         </div>
     )

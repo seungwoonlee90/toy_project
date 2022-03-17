@@ -10,6 +10,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 }
 
 .adfit {
@@ -23,100 +24,27 @@ body {
   left: 5vw;
 }
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  margin-top: 6vh;
-  /* margin-left: 40vh; */
-  height: 72vh;
-  width: 55vw;
-  position: relative;
-  border: 1px solid white;
-  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
-  border-radius: 15px;
-}
-
-.header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 30px;
-  height: 325px;
-  width: 100%;
-  position: relative;
-  font-size: 23px;
-}
-
-h4 {
+p {
   display: block;
   text-align: center;
 }
 
-p {
-  display: inline;
-  text-align: center;
-}
-
-.desc {
-  text-align: center;
-}
-
-.howto {
+.main {
+  height: 55vh;
   display: flex;
-
-  text-align: center;
-  text-decoration: none;
-  justify-content: center;
-  color: #ffe6cf;
-}
-
-.header h4 {
-  font-weight: bold;
-  font-size: 40px;
-}
-
-.header p {
-  line-height: 35px;
-}
-
-form {
-  display: inline;
-  margin: 0 10px;
-}
-
-.options {
-  font-size: 15px;
-  margin: 0 10px;
-  text-align: center;
-}
-
-.wrapper .reader {
-  text-align: center;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
-  position: absolute;
-  width: 100%;
-  padding: 0;
-  margin: 0;
+  text-align: center;
 }
 
-/* loading */
-
-.progress {
-  animation: loading 1s linear infinite;
-  margin-top: 20px;
-}
-
-@keyframes loading {
-  from {
-    transform: rotate(360deg);
-  }
-
-  to {
-    transform: rotate(0deg);
-  }
+.react-csv-input {
+  width: 90%;
+  padding: 10px;
+  display: block;
+  margin: 15px auto;
+  border: 1px solid #1d2326;
+  border-radius: 5px;
 }
 
 /* download */
@@ -132,10 +60,9 @@ form {
 }
 
 /* footer */
-
-.wrapper .footer {
-  position: absolute;
-  bottom: 2%;
+.footer {
+  position: relative;
+  text-align: center;
 }
 
 .google-icon {
@@ -150,9 +77,16 @@ form {
   margin-top: 18px;
 }
 
+/* 미디어 쿼리 작성 */
+
 @media (max-width: 480px) {
   body {
-    font-size: 0.5rem;
+    font-size: 0.9em;
+    color: black;
     background-color: dimgray;
+  }
+  .desc {
+    margin-top: 10vh;
+    font-size: 1.1rem;
   }
 }

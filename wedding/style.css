@@ -1,8 +1,9 @@
 body {
-  background-color: #f8f9f5;
-  font-family: "Montserrat";
+  background-image: url("https://images.unsplash.com/photo-1627283224609-2879145a4e4c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=916&q=80");
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 800;
+  color: #ffffff;
   height: 100%;
   margin: 0;
 }
@@ -12,12 +13,13 @@ body {
 }
 
 header {
-  font-family: "Montserrat";
   font-style: normal;
   font-weight: 800;
   font-size: 50px;
   line-height: 54px;
-  margin-top: 60px;
+  margin-top: 50px;
+  color: #d76542;
+  text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 #main-body {
@@ -25,60 +27,76 @@ header {
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-evenly;
-  height: calc(100vh - 300px);
+  height: calc(100vh - 200px);
   width: calc(100vw - 60px);
 }
 
 .container {
   width: calc(100vw - 60px);
-  height: 102px;
-  border: 2px solid #18191f;
+  height: 255px;
+  left: 25px;
+  top: 230px;
+  background: linear-gradient(
+    120.37deg,
+    rgba(239, 239, 239, 0.6) 0%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  border: 1px solid #efefef;
   box-sizing: border-box;
-  box-shadow: 0px 4px 0px #18191f;
-  border-radius: 16px;
+  backdrop-filter: blur(60px);
+  border-radius: 25px;
 }
 
 .container:nth-child(1) {
-  background-color: #fff;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .container:nth-child(2) {
-  background-color: #ffbd12;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
-}
-
-.container:nth-child(3) {
-  background-color: #00c6ae;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .one {
   width: 80px;
   font-size: 20px;
   line-height: 32px;
+  text-align: center;
 }
 
 .two {
-  width: 120px;
-  font-size: 44px;
-  text-align: right;
+  width: 150px;
+  font-size: 70px;
+  text-align: center;
+  background: linear-gradient(
+    180deg,
+    #358796 0%,
+    rgba(255, 255, 255, 0) 398.15%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }
 
 .third {
   width: 26px;
   font-size: 15px;
-  text-align: left;
+  text-align: center;
 }
 
 .icon {
   display: block;
   width: calc(100vw - 60px);
   text-align: center;
+}
+
+@media all and (max-width: 375px) {
+  .container {
+    height: 200px;
+  }
 }

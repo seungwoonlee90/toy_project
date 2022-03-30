@@ -13,11 +13,6 @@ body {
   height: 100vh;
 }
 
-.adfit {
-  position: absolute;
-  top: 13vh;
-  right: 5vw;
-}
 .adfit2 {
   position: absolute;
   top: 13vh;
@@ -72,9 +67,7 @@ p {
 }
 
 .Coupang {
-  display: flex;
-  justify-content: center;
-  margin-top: 18px;
+  text-align: center;
 }
 
 /* 미디어 쿼리 작성 */
@@ -82,7 +75,7 @@ p {
 @media (max-width: 480px) {
   body {
     font-size: 0.9em;
-    color: black;
+    color: #ffe6cf;
     background-color: dimgray;
   }
   .desc {

@@ -13,6 +13,8 @@ import Select from '@mui/material/Select';
 import { styled, Box } from '@mui/system';
 import ModalUnstyled from '@mui/base/ModalUnstyled';
 import CircularProgress from '@mui/material/CircularProgress';
+import Kakao from "./Kakao";
+import Coupang from "./Coupang";
 
 const StyledModal = styled(ModalUnstyled)`
   position: fixed;
@@ -143,6 +145,7 @@ function App() {
                             을 설치 후 ON으로 설정을 변경해주세요 <br />
                             3. 파일선택을 눌러 CSV 파일을 올려주세요 <br />
                             </p>
+                            <Coupang />
                             </Box>
                         </StyledModal>
                     </div>
@@ -194,18 +197,37 @@ function App() {
             ""
           )}
           {down ? (
-            <CSVLink
-              data={data}
-              headers={headers}
-              separator={","}
-              filename={"geocoding.csv"}
-              className="download"
+
+          <div>
+            <button type="button" onClick={handleOpen}>
+                Download
+            </button>
+            <StyledModal
+                aria-labelledby="unstyled-modal-title"
+                aria-describedby="unstyled-modal-description"
+                open={open}
+                onClose={handleClose}
+                BackdropComponent={Backdrop}
             >
-              <div className="download">
-                <p>Download</p>
-                <span className="material-icons">file_download</span>
-              </div>
-            </CSVLink>
+                <Box sx={style}>
+                  <h2 id="unstyled-modal-title" style={{"color" : "black"}}>Download ✨</h2>
+                  <CSVLink
+                          data={data}
+                          headers={headers}
+                          separator={","}
+                          filename={"geocoding.csv"}
+                          className="download"
+                        >
+                          <div className="download">
+                            <p style={{"color" : "black"}}>Download</p>
+                            <span className="material-icons" style={{"color" : "black"}}>file_download</span>
+                          </div>
+                  </CSVLink>
+                  <Coupang />
+                </Box>
+            </StyledModal>
+          </div>
+            
           ) : (
             ""
           )}
@@ -226,6 +248,7 @@ function App() {
                     <h4>
                         &copy; {new Date().getFullYear()}. ethanlee. all rights reserved.
                     </h4>
+                    <Kakao />
                 </div>
             </Container>
         </div>

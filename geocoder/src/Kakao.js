@@ -7,8 +7,8 @@ function Kakao() {
         className="kakao_ad_area"
         style={{ display: "none" }}
         data-ad-unit="DAN-rgk7dxo2C6UptXbe"
-        data-ad-width="160"
-        data-ad-height="600"
+        data-ad-width="320"
+        data-ad-height="100"
       ></ins>
     </div>
   );

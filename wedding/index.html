@@ -11,7 +11,7 @@
     <div id="particles-js"></div>
         <div id='main'>
             <header>Wedding<br/>Clock</header>
-            <div>April, 29. 2023.</div>
+            <span id='typed'></span>
             <div id='main-body'>
                 <div class="container">
                     <div class="one">D-Day</div>
@@ -26,9 +26,20 @@
             </div>
         </div>
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script>
         particlesJS.load('particles-js', './particlesjs-config.json', function() {
             console.log('callback - particles.js config loaded');
+          });
+    </script>
+    <script>
+        var typed = new Typed('#typed', {
+            strings: [
+            '✨ Wedding Date is... ^1000 Apr 29, 2023.', 
+            '📍 Location is... ^1000 Yu Dam Heon, Seoul',
+            '🥰 Love ya!'],
+            backSpeed: 20,
+            typeSpeed: 40
           });
     </script>
     <script>

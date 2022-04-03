@@ -8,22 +8,29 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id='main'>
-        <header>Wedding<br/>Clock</header>
-        <div>April, 29. 2023.</div>
-        <div id='main-body'>
-            <div class="container">
-                <div class="one">D-Day</div>
-                <div id="d-day" class="two"></div>
-                <div class="third">days</div>
-            </div>
-            <div class="container">
-                <div class="one">SW ❤️ JS</div>
-                <div id="start" class="two"></div>
-                <div class="third">days</div>
+    <div id="particles-js"></div>
+        <div id='main'>
+            <header>Wedding<br/>Clock</header>
+            <div>April, 29. 2023.</div>
+            <div id='main-body'>
+                <div class="container">
+                    <div class="one">D-Day</div>
+                    <div id="d-day" class="two"></div>
+                    <div class="third">days</div>
+                </div>
+                <div class="container">
+                    <div class="one">SW ❤️ JS</div>
+                    <div id="start" class="two"></div>
+                    <div class="third">days</div>
+                </div>
             </div>
         </div>
-    </div>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS.load('particles-js', './particlesjs-config.json', function() {
+            console.log('callback - particles.js config loaded');
+          });
+    </script>
     <script>
         window.onload = function() {
             let d_day = document.getElementById("d-day")

@@ -1,16 +1,24 @@
 body {
-  background-image: url("https://images.unsplash.com/photo-1627283224609-2879145a4e4c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=916&q=80");
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 800;
   color: #ffffff;
-  height: 100%;
-  width: 100vh;
+  height: 100vh;
+  width: 100vw;
   margin: 0;
+}
+
+#particles-js {
+  background-color: #358796;
+  height: 100vh;
+  margin-top: 0;
 }
 
 #main {
   margin-left: 30px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 header {
@@ -21,6 +29,7 @@ header {
   margin-top: 50px;
   color: #d76542;
   text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+  z-index: 10;
 }
 
 #main-body {

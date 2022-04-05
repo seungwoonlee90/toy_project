@@ -1,125 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: "Montserrat", sans-serif;
-  font-style: normal;
-  font-weight: 800;
-  color: #ffffff;
-  height: 100vh;
-  width: 100vw;
   margin: 0;
-}
-
-#particles-js {
-  background: linear-gradient(-45deg, #23a6d5, #23d5ab);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
+  padding: 0;
+  background-color: #fab1a0;
+  box-sizing: inherit;
+  font-family: "poppins", sans-serif;
   height: 100vh;
-  margin-top: 0;
-}
-
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-#main {
-  margin-left: 30px;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-header {
-  font-style: normal;
-  font-weight: 800;
-  font-size: 50px;
-  line-height: 54px;
-  margin-top: 50px;
-  color: #d76542;
-  text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
-  z-index: 10;
-}
-
-#main-body {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-evenly;
-  height: calc(100vh - 200px);
-  width: calc(100vw - 60px);
 }
 
 .container {
-  width: calc(100vw - 60px);
-  height: 255px;
-  left: 25px;
-  top: 230px;
-  background: linear-gradient(
-    120.37deg,
-    rgba(239, 239, 239, 0.6) 0%,
-    rgba(255, 255, 255, 0.1) 100%
-  );
-  border: 1px solid #efefef;
-  box-sizing: border-box;
-  backdrop-filter: blur(60px);
-  border-radius: 25px;
-}
-
-.container:nth-child(1) {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.container:nth-child(2) {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.one {
-  width: 150px;
-  font-size: 20px;
-  line-height: 32px;
+  height: 100%;
+  padding: 10%;
   text-align: center;
 }
 
-.two {
-  width: 150px;
-  font-size: 70px;
-  text-align: center;
-  background: linear-gradient(
-    180deg,
-    #358796 0%,
-    rgba(255, 255, 255, 0) 398.15%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.container img {
+  position: relative;
+  top: 0;
+  width: 100%;
+  margin-top: 5vh;
 }
 
-.third {
-  width: 150px;
-  font-size: 15px;
-  text-align: center;
+.nav-bar {
+  position: fixed;
+  z-index: 10;
 }
 
-.icon {
-  display: block;
-  width: calc(100vw - 60px);
-  text-align: center;
+.container .menu {
+  font-size: 32px;
+  opacity: 0;
 }
 
-@media all and (max-width: 375px) {
-  .container {
-    height: 200px;
-  }
+.container h1,
+.container p .container span {
+  text-align: center;
+  color: #313942;
+  opacity: 0;
+  margin-top: 5vh;
+}
+
+.wedding {
+  opacity: 0;
 }

@@ -4,57 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedding</title>
+    <title>SW❤️JS</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 </head>
 <body>
-    <div id="particles-js"></div>
-        <div id='main'>
-            <header>Wedding<br/>Clock</header>
-            <span id='typed'></span>
-            <div id='main-body'>
-                <div class="container">
-                    <div class="one">D-Day</div>
-                    <div id="d-day" class="two"></div>
-                    <div class="third">days</div>
-                </div>
-                <div class="container">
-                    <div class="one">SW ❤️ JS</div>
-                    <div id="start" class="two"></div>
-                    <div class="third">days</div>
-                </div>
-            </div>
+    <section class="container first">
+        <div class="nav-bar">
+            <i class='bx bx-menu-alt-left menu'></i>
         </div>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+        <img class="couple" src="./couple.png" alt="main">
+        <h1>SW ❤️ JS</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+        <span>We are </span><span id='typed'></span>
+    </section>
+    <section class="container second">
+        <div>
+            <h2>SW ❤️ JS</h2>
+            <img class="wedding" src="https://previews.dropbox.com/p/thumb/ABcremBBUWEmsI2ZSJfZZZWqIYkGxqlJSwBANcGD4NrhmDmu5IzBwc2Srq2nj1h6Li2CXzfY0t9KXyRDV1heTetoIt-m35taad1i1yHK9c-ewOHF0gcFbvBXRzXRe_sptEicDs-uDjPxB4gzCtN3WOff7nqzyeFbqK5Sq2XtZ58RkpBR2NPlskuEkX5rsf3ggJ-pPI6bkLiBiIJc29HPsNJha1UHdMWALiQRCK7o31lBKgpo_wkEsIIi7YS3ushQfSjLux7GsbEdujF9bgwHqTw3TMCCs4Nfq36Sp_brtSAu6ETKLKkICfXH60lviCj_2_7R9dx_ij8T9tmGvC9KlaKFPdG8nlb1DGkj_hwJEF-9soIDA5KuYrrrGbV3D2KFe_Hs046vnkX7XVgMZn4ZLNNpoCS2mF7h-47bLtCjsRYUW09Ew-iMh0663WLShucGs-ajZ_o82vSFbj3CTXQF8OG_ZXo-00mRPeSwK9kMUNnL2YtvsBnEhQWqilXuGKbmf3c/p.jpeg" alt="wedding">
+            <h4>인사말</h4>
+            <h6>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h6>
+            <h6>000, 000의 아들 SW</h6>
+            <h6>000, 000의 딸 JS</h6>
+        </div>
+    </section>
+    <section class="container third">
+        <div>
+            <h2>오시는길</h2>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script>
-        particlesJS.load('particles-js', './particlesjs-config.json', function() {
-            console.log('callback - particles.js config loaded');
-          });
-    </script>
     <script>
         var typed = new Typed('#typed', {
             strings: [
-            '✨ Wedding Date is... ^1000 Apr 29, 2023.', 
-            '📍 Location is... ^1000 Yu Dam Heon, Seoul',
-            '🥰 Love ya!'],
+            ' at Apr 29, 2023. ', 
+            ' in Yu Dam Heon, Seoul'],
             backSpeed: 20,
-            typeSpeed: 40,
+            typeSpeed: 50,
             loop: true
           });
     </script>
-    <script>
-        window.onload = function() {
-            let d_day = document.getElementById("d-day")
-            let start = document.getElementById("start")
-            let today = new Date();
-            let wedding = new Date(2023, 3, 29);
-            let first = new Date(2020, 10, 06);
-            let dDay = Math.ceil((wedding.getTime() - today.getTime()) /(1000 * 60 * 60 * 24));
-            let sDay = Math.ceil((today.getTime() - first.getTime()) /(1000 * 60 * 60 * 24));
-            d_day.innerText = dDay;
-            start.innerText = sDay;
-        }
-    </script>
+    <script src="./main.js"></script>
 </body>
 </html>

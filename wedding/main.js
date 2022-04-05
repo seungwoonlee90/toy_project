@@ -2,6 +2,7 @@ let scrollTop = 0;
 let h1;
 let coverImg;
 let cover;
+let menu = document.querySelector(".menu");
 
 window.onload = function(){
   h1 = document.getElementsByTagName("h1")[0];
@@ -19,3 +20,7 @@ window.addEventListener("scroll", function(e){
   cover.style.opacity = .3 + scrollTop / 1000;
 
 });
+
+menu.addEventListener("click", ()=>{
+  alert('coming soon!')
+})

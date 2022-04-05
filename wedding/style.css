@@ -44,8 +44,7 @@ h1 {
   position: fixed;
   width: 100%;
   height: 100vh;
-  background: url("https://previews.dropbox.com/p/thumb/ABdTNsQ_UtBpH_BHCUMY8-nX5BafwL8BpBIo_gH4bKwCkoRJb_RbuyybigTnGaUqwT_7DyQa7x1EEmkkvVDNF87vpTPijNJld02UKxQQo77A-yzGG3e0wz_ki6wCcr79rloeEcyXpIHto9VRrTVNlS5ArNwKtaJJ-oKRDOwAtv2MFGVXxtfe-erCCjEwo4DlO1SAjwtcKT1xK2vuQwBklngDy0hNtTvogoRzKpF60jSLpj9fncPsKeornycbT7RWqMHO7wm5S9KUnL_NBBrmjmy1pyxPEEabXAXTOgbaepNGw2LI8omVSezbi7D65AAo28LSM6086YiTP3E8aH_DQUxweB_A2MMwPFtvsuEoyhuEzGP5gJnQI8KpNg5y6gHws628yTrzoJ8fLCgvdZzErCxVSaIAPn8LuCs5x7pk4mrxWHGK4Ntoe4szd8qOVfQghMJZDchf4xOpR__2vLAhXz6IiLg6s0akir9L494OMtzI1QddSfpXKYTmnFRqsurzeZY/p.jpeg")
-    center center / cover no-repeat;
+  background: url("./main.jpg") center center / cover no-repeat;
 }
 
 .cover {

@@ -1,58 +1,21 @@
 let scrollTop = 0;
-let t1 = anime.timeline({
-    easing: 'easeOutExpo',
-    duration: 750,
-  });
+let h1;
+let coverImg;
+let cover;
 
-t1
-.add({
-  targets: '.menu',
-  opacity: 1,
-  translateX: [-100, 0],
+window.onload = function(){
+  h1 = document.getElementsByTagName("h1")[0];
+
+  coverImg = document.getElementsByClassName("coverImg")[0];
+  cover = document.getElementsByClassName("cover")[0];
+  cover.style.opacity = .3;
 }
-)
 
-.add({
-  targets: '.couple',
-  opacity: 1,
-  translateY: [500, 0],
-  easing: 'linear',
-}, 3)
+window.addEventListener("scroll", function(e){
+  scrollTop = document.documentElement.scrollTop;
 
-.add({
-  targets: '.container h1',
-  opacity: 1,
-  translateY: [200, 0],
-  easing: 'linear',
-}, 3)
+  h1.style.transform = "translate(0,"+ -scrollTop/10 +"px)";
+  coverImg.style.transform = "scale("+ (1 + scrollTop/1000) +")";
+  cover.style.opacity = .3 + scrollTop / 1000;
 
-.add({
-  targets: '.container p',
-  opacity: 1,
-  translateY: [200, 0],
-  easing: 'linear',
-}, 3)
-
-
-let t2 = anime.timeline({
-    easing: 'easeOutExpo',
-    duration: 750,
-  });
-
-t2.add({
-  targets: '.container h2',
-  opacity: 1,
-  translateY: [500, 0],
-  easing: 'linear',  
-})
-
-t2.add({
-    targets: '.container h6',
-    opacity: [0, 1],
-    translateY: [500, 0],
-    easing: 'linear',  
-  })
-
-window.onscroll = function(e) {
-    t2.seek(window.pageYOffset * 2);
-}
+});

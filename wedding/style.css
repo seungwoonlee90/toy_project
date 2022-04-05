@@ -46,6 +46,12 @@ body {
   margin-top: 5vh;
 }
 
+.couple {
+  position: absolute;
+  top: 300%;
+  opacity: 1;
+}
+
 .wedding {
   opacity: 0;
 }

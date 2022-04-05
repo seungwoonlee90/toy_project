@@ -83,14 +83,28 @@ section.text-wrapper3 {
 }
 
 .text {
-  padding: 15%;
+  padding: 12%;
+}
+
+.text-wrapper3 .text {
+  padding: 5% 12% 0% 12%;
+}
+.text-wrapper3 h4,
+.text-wrapper3 p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.text-wrapper3 h4 {
+  margin-bottom: 4px;
 }
 
 .map {
   border: 1px solid black;
   text-align: center;
   height: 40vh;
-  margin-bottom: 10vh;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
 }
 
 footer {

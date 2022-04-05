@@ -39,6 +39,8 @@ body {
 }
 
 .container h1,
+.container h2,
+.container h6,
 .container p .container span {
   text-align: center;
   color: #313942;

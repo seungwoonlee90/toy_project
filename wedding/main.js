@@ -2,9 +2,12 @@ let scrollTop = 0;
 let h1;
 let coverImg;
 let cover;
+let navBar = document.querySelector(".nav-bar");
 let menu = document.querySelector(".menu");
+let close = document.querySelector(".close");
 let greeting = document.querySelector("#greeting");
 let underline = document.querySelector(".underline");
+let origin = document.querySelectorAll("section")[0];
 let section = document.querySelectorAll("section")[1];
 let section_height = section.offsetHeight;
 
@@ -19,14 +22,18 @@ window.addEventListener("scroll", function(e){
   coverImg.style.transform = "scale("+ (1 + scrollTop/1000) +")";
   cover.style.opacity = .3 + scrollTop / 1000;
 
+  underline.style.width = ((scrollTop/ ( origin.offsetHeight)) * 60) + '%';
   // check percentage;
   if (scrollTop > 50) {
-    underline.style.width = (scrollTop/ (scrollTop + section_height)) * 100 + '%';
     greeting.style.animation = "greeting 1.2s ease-out forwards";
   }
 
 });
 
 menu.addEventListener("click", ()=>{
-  alert('coming soon!')
+  navBar.style.width = "60vw";
+})
+
+close.addEventListener("click", ()=>{
+  navBar.style.width = "0";
 })

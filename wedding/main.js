@@ -3,10 +3,12 @@ let h1;
 let coverImg;
 let cover;
 let menu = document.querySelector(".menu");
+let greeting = document.querySelector("#greeting");
+let underline = document.querySelector(".underline");
+let section = document.querySelectorAll("section")[1];
+let section_height = section.offsetHeight;
 
 window.onload = function(){
-  h1 = document.getElementsByTagName("h1")[0];
-
   coverImg = document.getElementsByClassName("coverImg")[0];
   cover = document.getElementsByClassName("cover")[0];
   cover.style.opacity = .3;
@@ -14,10 +16,14 @@ window.onload = function(){
 
 window.addEventListener("scroll", function(e){
   scrollTop = document.documentElement.scrollTop;
-
-  h1.style.transform = "translate(0,"+ -scrollTop/10 +"px)";
   coverImg.style.transform = "scale("+ (1 + scrollTop/1000) +")";
   cover.style.opacity = .3 + scrollTop / 1000;
+
+  // check percentage;
+  if (scrollTop > 50) {
+    underline.style.width = (scrollTop/ (scrollTop + section_height)) * 100 + '%';
+    greeting.style.animation = "greeting 1.2s ease-out forwards";
+  }
 
 });
 

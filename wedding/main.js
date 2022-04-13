@@ -10,6 +10,7 @@ let underline = document.querySelector(".underline");
 let origin = document.querySelectorAll("section")[0];
 let section = document.querySelectorAll("section")[1];
 let section_height = section.offsetHeight;
+let greeting_btn = document.querySelector(".greeting-btn");
 
 window.onload = function(){
   coverImg = document.getElementsByClassName("coverImg")[0];
@@ -36,4 +37,8 @@ menu.addEventListener("click", ()=>{
 
 close.addEventListener("click", ()=>{
   navBar.style.width = "0";
+})
+
+greeting_btn.addEventListener("click", ()=>{
+  window.scrollTo({ top: origin.offsetHeight, behavior: "smooth" });  
 })

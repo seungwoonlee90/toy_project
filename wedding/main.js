@@ -8,9 +8,11 @@ let close = document.querySelector(".close");
 let greeting = document.querySelector("#greeting");
 let underline = document.querySelector(".underline");
 let origin = document.querySelectorAll("section")[0];
-let section = document.querySelectorAll("section")[1];
-let section_height = section.offsetHeight;
+let section = document.querySelectorAll("section");
 let greeting_btn = document.querySelector(".greeting-btn");
+let info_btn = document.querySelector(".info-btn");
+let location_btn = document.querySelector(".location-btn");
+let photo_btn = document.querySelector(".photo-btn");
 
 window.onload = function(){
   coverImg = document.getElementsByClassName("coverImg")[0];
@@ -41,4 +43,16 @@ close.addEventListener("click", ()=>{
 
 greeting_btn.addEventListener("click", ()=>{
   window.scrollTo({ top: origin.offsetHeight, behavior: "smooth" });  
+})
+
+info_btn.addEventListener("click", ()=>{
+  window.scrollTo({ top: origin.offsetHeight + section[1].offsetHeight, behavior: "smooth" });  
+})
+
+location_btn.addEventListener("click", ()=>{
+  window.scrollTo({ top: origin.offsetHeight + section[1].offsetHeight + section[2].offsetHeight, behavior: "smooth" });  
+})
+
+photo_btn.addEventListener("click", ()=>{
+  alert("coming soon!")
 })

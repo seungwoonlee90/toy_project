@@ -63,5 +63,15 @@
         <footer>&copy; SW&JS. All rights reseved.</footer>
     </section> 
     <script src="./main.js"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ba41fff6af920553f23375d297c6806e"></script>
+    <script>
+		var container = document.getElementsByClassName('map');
+		var options = {
+			center: new kakao.maps.LatLng(37.5835824, 126.9852754),
+			level: 3
+		};
+
+		var map = new kakao.maps.Map(container, options);
+	</script>
 </body>
 </html>

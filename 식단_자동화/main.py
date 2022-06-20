@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 from slacker import Slacker
 
 url = 'https://uicoop.ac.kr/main.php?mkey=2&w=2&l=5'
-request = requests.get(url)
+request = requests.get(url, verify=False)
 soup = BeautifulSoup(request.content, "html.parser")
 
 menus = soup.select("td[class=din_lists]")

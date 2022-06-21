@@ -2,6 +2,8 @@ import os
 import requests
 from bs4 import BeautifulSoup
 from slacker import Slacker
+import warnings
+warnings.filterwarnings('ignore')
 
 url = 'https://uicoop.ac.kr/main.php?mkey=2&w=2&l=5'
 request = requests.get(url, verify=False)

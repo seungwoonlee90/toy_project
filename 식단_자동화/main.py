@@ -7,11 +7,14 @@ warnings.filterwarnings('ignore')
 
 url = 'https://uicoop.ac.kr/main.php?mkey=2&w=2&l=5'
 request = requests.get(url, verify=False)
-soup = BeautifulSoup(request.content, "html.parser")
 
-menus = soup.select("td[class=din_lists]")
-menu = menus[0].text
-print('today menu:', menu)
+if request.status_code == 200 :
+    soup = BeautifulSoup(request.content, "html.parser")
+    menus = soup.select("td[class=din_lists]")
+    print(menus)
+    menu = menus[0].text
+else :
+    menu = 'request error'
 
 token = os.environ.get("SECURE") #token test
 slack = Slacker(token)

@@ -10,23 +10,29 @@
     
 </head>
 <body>
-    <div class="menu"><i class='bx bx-menu-alt-left'></i></div>
-    <div class="nav-bar">
-        <div class="link">
-            <a href="#">HOME</a>
-            <a href="#" class="greeting-btn">GREETING</a>
-            <a href="#" class="info-btn">INFO</a>
-            <a href="#" class="location-btn">LOCATION</a>
-            <a href="#" class="photo-btn">PHOTO</a>
+    <div class="container">
+        <div class="text-wrapper">
+            <div class="text-1 text">ARE YOU READY?</div>
+            <div class="text-2 text">ARE YOU READY?</div>
+            <div class="text-3 text">ARE YOU READY?</div>
+            <div class="text-4 text">ARE YOU READY?</div>
+            <div class="text-5 text">ARE YOU READY?</div>
+            <div class="text-6 text">ARE YOU READY?</div>
+            <div class="text-7 text">ARE YOU READY?</div>
+            <div class="text-8 text">ARE YOU READY?</div>
+            <div class="text-9 text">ARE YOU READY?</div>
+            <div class="text-10 text">ARE YOU READY?</div>
+            <div class="text-11 text">ARE YOU READY?</div>
         </div>
-        <i class='bx bx-x close'></i>
     </div>
-    <section class="title-wrapper">
-        <img class="coverImg" src="./main.jpg"></img>
-        <div class="cover"></div>
-        <h1></h1>
-    </section> 
-    <section class="text-wrapper">
+    
+    <ul class="pointWrap">
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <section class="main-text-wrapper">
         <div class="text">
             <h2 id="greeting">✨ Greeting</h2>
             <div class="underline"></div>
@@ -37,7 +43,7 @@
             </p>
         </div>
     </section> 
-    <section class="text-wrapper2">
+    <section class="main-text-wrapper">
         <div class="text">
             <h2>👀 Information</h2>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -47,7 +53,7 @@
             </p>
         </div>
     </section>
-    <section class="text-wrapper3">
+    <section class="main-text-wrapper">
         <div class="text">
             <h2>📍 Location</h2>
             <h4>북촌 유담헌, Yu Dam Heon</h4>
@@ -63,15 +69,5 @@
         <footer>&copy; SW&JS. All rights reseved.</footer>
     </section> 
     <script src="./main.js"></script>
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ba41fff6af920553f23375d297c6806e"></script>
-    <script>
-		var container = document.getElementsByClassName('map');
-		var options = {
-			center: new kakao.maps.LatLng(37.5835824, 126.9852754),
-			level: 3
-		};
-
-		var map = new kakao.maps.Map(container, options);
-	</script>
 </body>
 </html>

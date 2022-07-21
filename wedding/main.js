@@ -1,37 +1,59 @@
-window.onload = function(){
-  var section = document.getElementsByTagName("section");
-  var pointBtn = document.querySelectorAll('.pointWrap li');
+var textWrapper = document.querySelector(".title");
+      textWrapper.innerHTML = textWrapper.textContent.replace(
+        /\S/g,
+        "<span class='letter'>$&</span>"
+      );
 
-  var pageNum = 0;
-  var totalNum = section.length;
+      anime.timeline().add({
+        targets: ".title .letter",
+        translateY: [-200, 0],
+        easing: "easeOutExpo",
+        duration: 1400,
+        delay: (el, i) => 6500 + 30 * i,
+      });
 
-  for( var i = 0; i < pointBtn.length; i++ ){
-    (function(idx) {
-        pointBtn[idx].onclick = function() {
- 
-            pageNum = idx;
-            pageChangeFunc();
-            window.scrollTo({
-              top: section[pageNum].offsetTop,
-              behavior: 'smooth',
-            })
-        }
-    })(i);
-    
-}
+      TweenMax.staggerFrom(
+        ".container > .block",
+        2,
+        {
+          y: "110%",
+          ease: Expo.easeInOut,
+          delay: 1,
+        },
+        0.4
+      );
+      TweenMax.to(".overlay", 0.5, {
+        y: "100%",
+        ease: Expo.easeInOut,
+        delay: 5.2,
+      });
 
-  //페이지 변경
-  function pageChangeFunc(){
-    for(var i=0; i<totalNum; i++){
-      section[i].classList.remove("active");
-      pointBtn[i].classList.remove("active");
-    }
-    section[pageNum].classList.add("active");
-    pointBtn[pageNum].classList.add("active");
-    
-  }
+      TweenMax.to(".container", 2, {
+        scale: "2",
+        y: "90%",
+        ease: Expo.easeInOut,
+        delay: 5.5,
+      });
 
-  //페이지 로드되면 바로 실행
-  pageChangeFunc();
-
-}
+      TweenMax.staggerFrom(
+        ".navbar > div",
+        1.6,
+        {
+          opacity: 0,
+          y: -100,
+          ease: Expo.easeInOut,
+          delay: 6,
+        },
+        0.08
+      );
+      TweenMax.staggerFrom(
+        ".site-menu > div",
+        1,
+        {
+          opacity: 0,
+          y: -100,
+          ease: Power2.easeOut,
+          delay: 6.5,
+        },
+        0.1
+      );
